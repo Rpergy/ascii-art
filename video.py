@@ -18,13 +18,15 @@ def video2ascii(video, dimensions):
 
 			for y in greyFrame:
 				for x in y:
-					if x <= 64:
+					if x <= 51:
+						asciiFrame += "  "
+					if x > 51 and x <= 102:
 						asciiFrame += "░░"
-					elif x > 64 and x <= 128:
+					elif x > 102 and x <= 153:
 						asciiFrame += "▒▒"
-					elif x > 128 and x <= 192:
+					elif x > 153 and x <= 204:
 						asciiFrame += "▓▓"
-					elif x > 192:
+					elif x > 204:
 						asciiFrame += "██"
 				asciiFrame += "\n"
 		
@@ -41,4 +43,4 @@ def video2ascii(video, dimensions):
 
 	cv.destroyAllWindows()
 
-video2ascii("Videos/testing.mp4", (110, 150))
+video2ascii("Videos/griddy.webm", (150, 100))

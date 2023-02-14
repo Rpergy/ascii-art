@@ -7,14 +7,16 @@ def image2ascii(image, dimensions):
 
 	for y in greyImage:
 		for x in y:
-			if x <= 64:
+			if x <= 51:
+				print("  ", end = "")
+			elif x > 51 and x <= 102:
 				print("░░", end = "")
-			elif x > 64 and x <= 128:
+			elif x > 102 and x <= 153:
 				print("▒▒", end = "")
-			elif x > 128 and x <= 192:
+			elif x > 153 and x <= 204:
 				print("▓▓", end = "")
-			elif x > 192 and x <= 255:
+			elif x > 204:
 				print("██", end = "")
 		print("")
 
-image2ascii("Images/shrey.jpg", (100, 150))
+image2ascii("Images/shrey.jpg", (175, 225))
